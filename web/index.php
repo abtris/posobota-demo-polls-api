@@ -26,6 +26,11 @@ $app->get('/questions', function(Silex\Application $app) use ($questions) {
   return new JsonResponse(array($questions), 200, array('Link' => '</questions?page=2>; rel="next"'));
 });
 
+$app->post('/questions', function(Silex\Application $app) use ($questions) {
+  return new JsonResponse($questions, 201, array('Location' => '/questions/2'));
+});
+
+
 $app->error(function (\Exception $e, $code) {
     return new JsonResponse('We are sorry, but something went terribly wrong.');
 });
