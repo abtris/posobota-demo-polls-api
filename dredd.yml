@@ -1,0 +1,26 @@
+reporter: apiary
+custom:
+  apiaryApiKey: b2e56e9d42811043be252968f850b5df
+  apiaryApiName: posobota
+dry-run: null
+hookfiles: null
+sandbox: false
+server: 'php -S localhost:8000'
+server-wait: 3
+init: false
+names: false
+only: []
+output: []
+header: []
+sorted: false
+user: null
+inline-errors: false
+details: false
+method: []
+color: true
+level: info
+timestamp: false
+silent: false
+path: []
+blueprint: posobota-apiary.apib
+endpoint: 'http://localhost:8000'
