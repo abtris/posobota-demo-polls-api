@@ -1,6 +1,7 @@
 <?php
 // web/index.php
 require_once __DIR__.'/../vendor/autoload.php';
+require_once __DIR__.'/fixtures.php';
 
 $app = new Silex\Application();
 
@@ -12,23 +13,9 @@ $app->get('/', function () {
   return new JsonResponse($output);
 });
 
-// $app->get('/blog/{id}', function (Silex\Application $app, $id) use ($blogPosts) {
-//     if (!isset($blogPosts[$id])) {
-//         $app->abort(404, "Post $id does not exist.");
-//     }
-
-//     $post = $blogPosts[$id];
-
-//     return  "<h1>{$post['title']}</h1>".
-//             "<p>{$post['body']}</p>";
-// });
-
-// $app->post('/feedback', function (Request $request) {
-//     $message = $request->get('message');
-//     mail('feedback@yoursite.com', '[YourSite] Feedback', $message);
-
-//     return new Response('Thank you for your feedback!', 201);
-// });
+$app->get('/questions/{question_id}', function (Silex\Application $app, $question_id) use ($questions) {
+  return new JsonResponse($questions);
+});
 
 
 $app->error(function (\Exception $e, $code) {
