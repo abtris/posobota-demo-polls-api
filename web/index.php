@@ -6,6 +6,7 @@ require_once __DIR__.'/fixtures.php';
 $app = new Silex\Application();
 
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 $app->get('/', function () {
@@ -15,6 +16,10 @@ $app->get('/', function () {
 
 $app->get('/questions/{question_id}', function (Silex\Application $app, $question_id) use ($questions) {
   return new JsonResponse($questions);
+});
+
+$app->post('/questions/{question_id}/choices/{choice_id}', function(Silex\Application $app, $question_id, $choice_id) {
+  return new Response('', 201, array('Location' => '/questions/1'));
 });
 
 
