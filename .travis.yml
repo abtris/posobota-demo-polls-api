@@ -1,0 +1,12 @@
+sudo: false
+language: php
+cache:
+  directories:
+    - $HOME/.composer/cache
+php:
+  - 5.5
+before_install:
+  - npm install -g dredd
+  - composer install
+script:
+  - dredd
