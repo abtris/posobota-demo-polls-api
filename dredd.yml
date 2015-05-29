@@ -5,7 +5,7 @@ custom:
 dry-run: null
 hookfiles: null
 sandbox: false
-server: 'php -S localhost:8000 -t web'
+server: 'php -S 0.0.0.0:8000 -t web'
 server-wait: 3
 init: false
 names: false
