@@ -3,6 +3,6 @@
         "silex/silex": "~1.2"
     },
     "require-dev": {
-        "ddelnano/dredd-hooks-php": "~1.0.0"
+        "ddelnano/dredd-hooks-php": "~1.1.0"
     }
 }
